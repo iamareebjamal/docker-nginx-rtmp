@@ -1,5 +1,5 @@
 ARG NGINX_VERSION=1.16.1
-ARG NGINX_RTMP_VERSION=1.2.1
+ARG NGINX_RTMP_VERSION=master
 ARG FFMPEG_VERSION=4.2.2
 
 
@@ -36,8 +36,8 @@ RUN cd /tmp && \
 
 # Get nginx-rtmp module.
 RUN cd /tmp && \
-  wget https://github.com/arut/nginx-rtmp-module/archive/v${NGINX_RTMP_VERSION}.tar.gz && \
-  tar zxf v${NGINX_RTMP_VERSION}.tar.gz && rm v${NGINX_RTMP_VERSION}.tar.gz
+  wget https://github.com/acevery/nginx-rtmp-module/archive/master.tar.gz && \
+  tar zxf master.tar.gz && rm master.tar.gz
 
 # Compile nginx with nginx-rtmp module.
 RUN cd /tmp/nginx-${NGINX_VERSION} && \
